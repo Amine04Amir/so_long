@@ -1,5 +1,4 @@
 <h1 align="center">so_long</h1>
-And thanks for all the fish!
 
 ## Summary:
 _This project is a very small 2D game.
