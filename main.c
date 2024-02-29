@@ -17,11 +17,12 @@ int main()
         j = WIDTH * 0.1;
        while(j < WIDTH * 0.9)
        {
-            mlx_pixel_put(mlx_cnx, mlx_win, j, i, rand() % 0xF0FF000);
+            mlx_pixel_put(mlx_cnx, mlx_win, j, i, rand() % 0x1000000);
             ++j;
        }
         ++i;
     }
+    mlx_string_put(mlx_cnx, mlx_win, WIDTH * 0.8, HEIGHT * 0.93, 3950428, "Signal lost");
     mlx_loop(mlx_cnx);
     free(mlx_cnx);
 }
