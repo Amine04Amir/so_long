@@ -22,6 +22,16 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
+size_t	ft_strlen1(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0' && str[i] != '\n')
+		i++;
+	return (i);
+}
+
 char	*ft_strchr(const char *str, int c)
 {
 	if (!str)

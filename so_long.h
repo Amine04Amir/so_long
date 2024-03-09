@@ -19,7 +19,8 @@
 
 typedef struct s_data
 {
-	int *map_dim[2];
-} t_data;
+	int		map_dim[2];
+	char	**map;
+}			t_data;
 
 #endif
