@@ -20,59 +20,43 @@ int	check_components(char c)
 	return (0);
 }
 
-void check_sides(char *path)
+void	check_first_last_line(t_data *data, char *path)
 {
-	int fd;
-	char *str;
+	int		fd;
+	int		i;
+	char	*str;
 
 	fd = open(path, O_RDONLY);
 	str = get_next_line(fd);
-	while (get_next_line(fd) != NULL)
+	i = 0;
+	while (i < data->map_dim[1])
 	{
-		if (str[0] != '1' || str[ft_strlen(str) - 1] != '1')
+	}
+}
+
+void	check_sides(t_data *data, char *path)
+{
+	int		i;
+	int		fd;
+	char	*str;
+
+	fd = open(path, O_RDONLY);
+	i = 0;
+	str = get_next_line(fd);
+	while (i < data->map_dim[0] && str != NULL)
+	{
+		if (str[0] != '1' || str[data->map_dim[1] - 1] != '1')
 		{
-			printf("Invalid map\n");
+			printf("Invalid map[sides]\n");
 			exit(1);
 		}
 		str = get_next_line(fd);
-	} 
+		i++;
+	}
+	close(fd);
 }
 
-// void check_first_last(t_data data, char *path)
-// {
-// 	int i;
-// 	int fd;
-// 	char *str;
-// 	fd = open(path, O_RDONLY);
-// 	i = 0;
-// 	str = get_next_line(fd);
-// 	while (str[i] && i < data.map_dim[1] )
-// 	{
-// 		if (str[i] != '1')
-// 		{
-// 			printf("Invalid map\n");
-// 			exit(1);			
-// 		}
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while(get_next_line(fd) != NULL)
-// 	{
-// 		free(str);
-// 		str = get_next_line(fd);
-// 	}
-// 	while (str[i] && i < data.map_dim[0])
-// 	{
-// 		if (str[i] != '1')
-// 		{
-// 			printf("Invalid map\n");
-// 			exit(1);			
-// 		}
-// 		i++;
-// 	}
-// }
-
-void	is_rectangular(char *path)
+void	check_rectangular(char *path)
 {
 	char	*str;
 	size_t	len;
@@ -85,11 +69,12 @@ void	is_rectangular(char *path)
 	{
 		if (ft_strlen1(str) != len)
 		{
-			printf("Invalid map\n");
+			printf("Invalid map[rect]\n");
 			exit(1);
 		}
 		str = get_next_line(fd);
 	}
+	close(fd);
 }
 
 int	ft_countline(char *path)
@@ -141,38 +126,24 @@ void	map_loop(t_data *data, char *path)
 	close(fd);
 }
 
-int	main(int ac, char **av)
+void	check_valid_components(char *path, t_data *data)
 {
-	t_data	data;
 	int		fd;
 	int		i;
 	int		j;
 	char	*str;
 
-	fd = open(av[1], O_RDONLY);
-	if (fd < 0)
-	{
-		printf("Error, map doesn't exist\n");
-		exit(1);
-	}
-	if (ac != 2)
-		return (0);
-	data.map_dim[0] = ft_countline(av[1]);
-	data.map = (char **)malloc(sizeof(char *) * (data.map_dim[0] + 1));
-	map_loop(&data, av[1]);
 	i = 0;
+	fd = open(path, O_RDONLY);
 	str = get_next_line(fd);
-	is_rectangular(av[1]);
-	check_sides(av[1]);
-	// check_first_last(data, av[1]);
-	while (i < data.map_dim[0])
+	while (i < data->map_dim[0])
 	{
 		j = 0;
-		while (j < data.map_dim[1])
+		while (j < data->map_dim[1])
 		{
 			if (!check_components(str[j]))
 			{
-				printf("Invalid map\n");
+				printf("Invalid map[components]\n");
 				exit(1);
 			}
 			j++;
@@ -180,4 +151,20 @@ int	main(int ac, char **av)
 		str = get_next_line(fd);
 		i++;
 	}
+	close(fd);
+}
+
+int	main(int ac, char **av)
+{
+	t_data	data;
+
+	if (ac != 2)
+		return (0);
+	data.map_dim[0] = ft_countline(av[1]);
+	data.map = (char **)malloc(sizeof(char *) * (data.map_dim[0] + 1));
+	map_loop(&data, av[1]);
+	check_rectangular(av[1]);
+	check_sides(&data, av[1]);
+	check_valid_components(av[1], &data);
+	check_first_last_line(av[1], &data);
 }
