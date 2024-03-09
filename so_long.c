@@ -20,18 +20,45 @@ int	check_components(char c)
 	return (0);
 }
 
-void	check_first_last_line(t_data *data, char *path)
+void	check_first_last_line(char *path, t_data *data)
 {
 	int		fd;
 	int		i;
 	char	*str;
+	int j;
 
 	fd = open(path, O_RDONLY);
-	str = get_next_line(fd);
 	i = 0;
-	while (i < data->map_dim[1])
+	str = get_next_line(fd);
+	while (str[i] != '\n')
 	{
+		if (str[i] != '1')
+		{
+			printf("Invalid map[star lwl]\n");
+			exit(1);
+		}
+		i++;
 	}
+	i = 0;
+	while (str != NULL)
+	{
+		j = 0;
+		if(i == data->map_dim[0] - 1)
+		{
+			while(str[j] != '\0')
+			{
+				if (str[j] != '1')
+				{
+					printf("Invalid map[str lkher]\n");
+					exit(1);
+				}
+				j++;
+			}
+		}
+		str = get_next_line(fd); 	
+		i++;
+	}
+	close(fd);
 }
 
 void	check_sides(t_data *data, char *path)
@@ -162,9 +189,9 @@ int	main(int ac, char **av)
 		return (0);
 	data.map_dim[0] = ft_countline(av[1]);
 	data.map = (char **)malloc(sizeof(char *) * (data.map_dim[0] + 1));
-	map_loop(&data, av[1]);
-	check_rectangular(av[1]);
-	check_sides(&data, av[1]);
-	check_valid_components(av[1], &data);
+	// map_loop(&data, av[1]);
+	// check_rectangular(av[1]);
+	// check_sides(&data, av[1]);
+	// check_valid_components(av[1], &data);
 	check_first_last_line(av[1], &data);
 }
