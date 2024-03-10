@@ -21,6 +21,11 @@ typedef struct s_data
 {
 	int		map_dim[2];
 	char	**map;
+	int	p;
+	int	c;
+	int	e;
+	void	*mlx;
+	void	*win;
 }			t_data;
 
 #endif

@@ -2,7 +2,7 @@ NAME = so_long
 
 SRC = so_long.c ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c 
 
-CC = gcc -fsanitize=address -g3
+CC = gcc #-fsanitize=address -g3
 
 CFLAGS = -Wall -Wextra -Werror
 

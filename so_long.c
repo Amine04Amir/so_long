@@ -13,11 +13,45 @@
 #include "so_long.h"
 #include <stdio.h>
 
+void ft_error()
+{
+	printf("Invalid map!");
+	exit(1);
+}
+
 int	check_components(char c)
 {
 	if (c == '0' || c == '1' || c == 'P' || c == 'C' || c == 'E')
 		return (1);
 	return (0);
+}
+
+void ft_pce(t_data *data)
+{
+	int 	i;
+	int		j;
+
+	i = 0;
+	while (i < data->map_dim[0])
+	{
+		j = 0;
+		while (j < data->map_dim[1])
+		{
+			if (data->map[i][j] == 'P')
+				data->p++;
+			if (data->map[i][j] == 'C')
+				data->c++;
+			if (data->map[i][j] == 'E')
+				data->e++;
+			j++;
+		}
+		i++;
+	}
+	if (data->p != 1 || data->c < 1 || data->e != 1)
+	{
+		printf("Compenents error");
+		exit(1);
+	}
 }
 
 void	check_first_last_line(char *path, t_data *data)
@@ -125,33 +159,6 @@ int	ft_countline(char *path)
 	return (i);
 }
 
-void	map_loop(t_data *data, char *path)
-{
-	int		i;
-	int		j;
-	int		fd;
-	char	*str;
-
-	fd = open(path, O_RDONLY);
-	if (fd < 0)
-		return ;
-	str = get_next_line(fd);
-	data->map_dim[1] = ft_strlen(str) - 1;
-	i = 0;
-	while (i < data->map_dim[0])
-	{
-		j = 0;
-		data->map[i] = (char *)malloc(sizeof(char) * data->map_dim[1]);
-		while (j < data->map_dim[1])
-		{
-			data->map[i][j] = str[j];
-			j++;
-		}
-		str = get_next_line(fd);
-		i++;
-	}
-	close(fd);
-}
 
 void	check_valid_components(char *path, t_data *data)
 {
@@ -180,18 +187,68 @@ void	check_valid_components(char *path, t_data *data)
 	}
 	close(fd);
 }
+void	map_loop(t_data *data, char *path)
+{
+	int		i;
+	int		j;
+	int		fd;
+	char	*str;
+
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+		ft_error();
+	str = get_next_line(fd);
+	if (str == NULL)
+	{
+		printf("khawi\n");
+		exit(1);
+	}	
+	data->map_dim[1] = ft_strlen(str) - 1;
+	i = 0;
+	while (i < data->map_dim[0])
+	{
+		j = 0;
+		data->map[i] = (char *)malloc(sizeof(char) * data->map_dim[1]);
+		while (j < data->map_dim[1])
+		{
+			data->map[i][j] = str[j];
+			j++;
+		}
+		str = get_next_line(fd);
+		i++;
+	}
+	close(fd);
+}
 
 int	main(int ac, char **av)
 {
 	t_data	data;
+	int fd;
 
+	fd = open (av[1], O_RDONLY);
+	if (fd < 0)
+	{
+		printf("Invalid Map\n");
+		exit(1);
+	}
 	if (ac != 2)
-		return (0);
+	{
+		printf("Error\n");
+		exit(1);
+	}
+
 	data.map_dim[0] = ft_countline(av[1]);
 	data.map = (char **)malloc(sizeof(char *) * (data.map_dim[0] + 1));
-	// map_loop(&data, av[1]);
-	// check_rectangular(av[1]);
-	// check_sides(&data, av[1]);
-	// check_valid_components(av[1], &data);
+	map_loop(&data, av[1]);
+	check_rectangular(av[1]);
 	check_first_last_line(av[1], &data);
+	check_sides(&data, av[1]);
+	check_valid_components(av[1], &data);
+	ft_pce(&data);
+
+	data.mlx = mlx_init();
+	data.win = mlx_new_window(data.mlx, data.map_dim[1] * 50, data.map_dim[0] * 50, "so_long");
+	mlx_string_put(data.mlx, data.win, 210, 75, 0x00FF00, "So_long");
+	mlx_loop(data.mlx);
+	// printf("success\n");
 }
