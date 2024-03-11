@@ -248,7 +248,14 @@ int	main(int ac, char **av)
 
 	data.mlx = mlx_init();
 	data.win = mlx_new_window(data.mlx, data.map_dim[1] * 50, data.map_dim[0] * 50, "so_long");
-	mlx_string_put(data.mlx, data.win, 210, 75, 0x00FF00, "So_long");
+	mlx_string_put(data.mlx, data.win, 210, 76, 0xFFFFFF, "m");
+	mlx_string_put(data.mlx, data.win, 221, 77, 0xF0FFFF, "o");
+	mlx_string_put(data.mlx, data.win, 232, 78, 0xFF0FFF, "n");
+	mlx_string_put(data.mlx, data.win, 243, 79, 0xFFF0FF, "t");
+	mlx_string_put(data.mlx, data.win, 254, 80, 0xFFFF0F, "a");
+	mlx_string_put(data.mlx, data.win, 265, 81, 0xFFF0FF, "s");
+	mlx_string_put(data.mlx, data.win, 276, 82, 0xFF0FFF, "s");
+	mlx_string_put(data.mlx, data.win, 287, 83, 0xF0FFFF, "i");
+	mlx_string_put(data.mlx, data.win, 298, 84, 0x0FFFFF, "r");
 	mlx_loop(data.mlx);
-	// printf("success\n");
 }
