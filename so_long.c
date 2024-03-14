@@ -13,7 +13,7 @@
 #include "so_long.h"
 #include <stdio.h>
 
-void ft_error()
+void	ft_error(void)
 {
 	printf("Invalid map!");
 	exit(1);
@@ -26,10 +26,10 @@ int	check_components(char c)
 	return (0);
 }
 
-void ft_pce(t_data *data)
+void	ft_pce(t_data *data)
 {
-	int 	i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < data->map_dim[0])
@@ -59,7 +59,7 @@ void	check_first_last_line(char *path, t_data *data)
 	int		fd;
 	int		i;
 	char	*str;
-	int j;
+	int		j;
 
 	fd = open(path, O_RDONLY);
 	i = 0;
@@ -77,9 +77,9 @@ void	check_first_last_line(char *path, t_data *data)
 	while (str != NULL)
 	{
 		j = 0;
-		if(i == data->map_dim[0] - 1)
+		if (i == data->map_dim[0] - 1)
 		{
-			while(str[j] != '\0')
+			while (str[j] != '\0')
 			{
 				if (str[j] != '1')
 				{
@@ -89,7 +89,7 @@ void	check_first_last_line(char *path, t_data *data)
 				j++;
 			}
 		}
-		str = get_next_line(fd); 	
+		str = get_next_line(fd);
 		i++;
 	}
 	close(fd);
@@ -159,7 +159,6 @@ int	ft_countline(char *path)
 	return (i);
 }
 
-
 void	check_valid_components(char *path, t_data *data)
 {
 	int		fd;
@@ -202,7 +201,7 @@ void	map_loop(t_data *data, char *path)
 	{
 		printf("khawi\n");
 		exit(1);
-	}	
+	}
 	data->map_dim[1] = ft_strlen(str) - 1;
 	i = 0;
 	while (i < data->map_dim[0])
@@ -223,9 +222,9 @@ void	map_loop(t_data *data, char *path)
 int	main(int ac, char **av)
 {
 	t_data	data;
-	int fd;
+	int		fd;
 
-	fd = open (av[1], O_RDONLY);
+	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
 	{
 		printf("Invalid Map\n");
@@ -236,7 +235,6 @@ int	main(int ac, char **av)
 		printf("Error\n");
 		exit(1);
 	}
-
 	data.map_dim[0] = ft_countline(av[1]);
 	data.map = (char **)malloc(sizeof(char *) * (data.map_dim[0] + 1));
 	map_loop(&data, av[1]);
@@ -245,17 +243,9 @@ int	main(int ac, char **av)
 	check_sides(&data, av[1]);
 	check_valid_components(av[1], &data);
 	ft_pce(&data);
-
 	data.mlx = mlx_init();
-	data.win = mlx_new_window(data.mlx, data.map_dim[1] * 50, data.map_dim[0] * 50, "so_long");
-	mlx_string_put(data.mlx, data.win, 210, 76, 0xFFFFFF, "m");
-	mlx_string_put(data.mlx, data.win, 221, 77, 0xF0FFFF, "o");
-	mlx_string_put(data.mlx, data.win, 232, 78, 0xFF0FFF, "n");
-	mlx_string_put(data.mlx, data.win, 243, 79, 0xFFF0FF, "t");
-	mlx_string_put(data.mlx, data.win, 254, 80, 0xFFFF0F, "a");
-	mlx_string_put(data.mlx, data.win, 265, 81, 0xFFF0FF, "s");
-	mlx_string_put(data.mlx, data.win, 276, 82, 0xFF0FFF, "s");
-	mlx_string_put(data.mlx, data.win, 287, 83, 0xF0FFFF, "i");
-	mlx_string_put(data.mlx, data.win, 298, 84, 0x0FFFFF, "r");
+	data.win = mlx_new_window(data.mlx, data.map_dim[1] * 50, data.map_dim[0]
+			* 50, "so_long");
+	mlx_string_put(data.mlx, data.win, 210, 76, 0xFFFFFF, "Counter");
 	mlx_loop(data.mlx);
 }
