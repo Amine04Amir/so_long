@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/03/05 19:17:09 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/03 16:10:03 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 void	ft_error(void)
 {
-	printf("Invalid map!");
+	write(2, "Invalid map!", 13);
 	exit(1);
 }
 
@@ -204,7 +203,7 @@ void	map_loop(t_data *data, char *path)
 	}
 	data->map_dim[1] = ft_strlen(str) - 1;
 	i = 0;
-	while (i < data->map_dim[0])
+	while (i < data->map_dim[0]) 
 	{
 		j = 0;
 		data->map[i] = (char *)malloc(sizeof(char) * data->map_dim[1]);
@@ -232,7 +231,7 @@ int	main(int ac, char **av)
 	}
 	if (ac != 2)
 	{
-		printf("Error\n");
+		printf("arguments error\n");
 		exit(1);
 	}
 	data.map_dim[0] = ft_countline(av[1]);

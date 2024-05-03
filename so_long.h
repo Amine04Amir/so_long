@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/03/05 19:17:29 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/03 15:26:00 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 # include "./get_next_line/get_next_line.h"
 # include "mlx.h"
 # include <math.h>
+#include <stdio.h>
 
 typedef struct s_data
 {
 	int		map_dim[2];
 	char	**map;
-	int	p;
-	int	c;
-	int	e;
+	int		p;
+	int		c;
+	int		e;
 	void	*mlx;
 	void	*win;
 }			t_data;
