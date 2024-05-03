@@ -42,9 +42,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 12856.085544403739,
-			"y": 573.4529995869198,
-			"lastActivityTimestamp": 1714748993886,
+			"x": 7985.432104964828,
+			"y": -484.70215381537173,
+			"lastActivityTimestamp": 1714751620043,
 			"meta": {}
 		},
 		{
@@ -115,9 +115,9 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:WF7iBUenldUs31sfUQW1S"
+				"shape:5FQsy7xuFOz_YdzBkV7TQ"
 			],
-			"hoveredShapeId": "shape:WF7iBUenldUs31sfUQW1S",
+			"hoveredShapeId": "shape:5FQsy7xuFOz_YdzBkV7TQ",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -127,9 +127,9 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -2551.561618622489,
-			"y": 5537.19153166308,
-			"z": 0.1,
+			"x": -1988.6970600517875,
+			"y": 3783.791562722354,
+			"z": 0.118800537109375,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -17711,7 +17711,7 @@
 		},
 		{
 			"x": -3558.2857876502167,
-			"y": 1261.2441133108186,
+			"y": 1301.4685654868044,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -17720,7 +17720,7 @@
 			"type": "geo",
 			"props": {
 				"w": 1022.9817199707031,
-				"h": 349.8046875,
+				"h": 266.7253236601873,
 				"geo": "rectangle",
 				"color": "black",
 				"labelColor": "black",
@@ -17762,7 +17762,7 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1315.5768601649775,
+			"x": -1426.3027642312982,
 			"y": 1368.224955382183,
 			"rotation": 0,
 			"isLocked": false,
@@ -17771,7 +17771,7 @@
 			"id": "shape:pnVpwAk9Zv2gxpYFIZ4L4",
 			"type": "geo",
 			"props": {
-				"w": 915.9778835898378,
+				"w": 1026.7037876561585,
 				"h": 172.22503805105316,
 				"geo": "rectangle",
 				"color": "black",
@@ -17791,8 +17791,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1275.0240209034264,
-			"y": 1376.9677769647296,
+			"x": -1375.4472063487656,
+			"y": 1376.5839970355455,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -17802,8 +17802,8 @@
 			"props": {
 				"color": "black",
 				"size": "xl",
-				"w": 395.96649496051793,
-				"text": "Map-characters",
+				"w": 439.7367787514109,
+				"text": "Map-rows/columns",
 				"font": "mono",
 				"textAlign": "start",
 				"autoSize": false,
@@ -18183,8 +18183,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 3544.895771336981,
-			"y": 1141.9145616987034,
+			"x": 3553.828544601649,
+			"y": 1189.9481904792183,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -18212,8 +18212,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 3576.8266746903137,
-			"y": 1183.489845348824,
+			"x": 3585.7594479549816,
+			"y": 1231.5234741293389,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -18235,8 +18235,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 4078.769476436946,
-			"y": 1170.866820391152,
+			"x": 4087.702249701614,
+			"y": 1218.9004491716669,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -18258,8 +18258,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 3835.9434044741965,
-			"y": 1328.3885898102917,
+			"x": 3844.8761777388645,
+			"y": 1376.4222185908066,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -18278,6 +18278,58 @@
 			},
 			"parentId": "page:page",
 			"index": "b3L",
+			"typeName": "shape"
+		},
+		{
+			"x": 5794.368782817797,
+			"y": -610.3374200569183,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:m1fpYDZGPP6ffwHR_UP6x",
+			"type": "geo",
+			"props": {
+				"w": 2880.7369191154266,
+				"h": 2236.0272252556992,
+				"geo": "rectangle",
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"dash": "solid",
+				"size": "xl",
+				"font": "draw",
+				"text": "",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"growY": 0,
+				"url": ""
+			},
+			"parentId": "page:page",
+			"index": "b3M",
+			"typeName": "shape"
+		},
+		{
+			"x": 5837.278410094017,
+			"y": -575.8023640466258,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:5FQsy7xuFOz_YdzBkV7TQ",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "xl",
+				"w": 1019.9605778801796,
+				"text": "void check_sides (t_data *data, char *path)",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": false,
+				"scale": 2.7805334317449235
+			},
+			"parentId": "page:page",
+			"index": "b3N",
 			"typeName": "shape"
 		}
 	]
