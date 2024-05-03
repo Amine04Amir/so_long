@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/03 16:50:54 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/03 22:35:00 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_pce(t_data *data)
 	}
 	if (data->p != 1 || data->c < 1 || data->e != 1)
 	{
-		printf("Compenents error");
+		write(2, "Map compenents error", 17);
 		exit(1);
 	}
 }
@@ -214,6 +214,11 @@ void	map_loop(t_data *data, char *path)
 		}
 		str = get_next_line(fd);
 		i++;
+
+
+
+
+		
 	}
 	close(fd);
 }
@@ -242,9 +247,5 @@ int	main(int ac, char **av)
 	check_sides(&data, av[1]);
 	check_valid_components(av[1], &data);
 	ft_pce(&data);
-	data.mlx = mlx_init();
-	data.win = mlx_new_window(data.mlx, data.map_dim[1] * 50, data.map_dim[0]
-			* 50, "so_long");
-	mlx_string_put(data.mlx, data.win, 210, 76, 0xFFFFFF, "Counter");
-	mlx_loop(data.mlx);
+	ft_put_floor(&data);
 }

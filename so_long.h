@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/03 15:26:00 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/03 22:35:00 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,11 @@ typedef struct s_data
 	void	*mlx;
 	void	*win;
 }			t_data;
+
+void ft_put_floor(t_data *data);
+
+
+
+
 
 #endif
