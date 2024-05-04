@@ -1,6 +1,8 @@
 #include "so_long.h"
 
-void ft_put_floor(t_data *data)
+
+
+void ft_put_textures(t_data *data)
 {
     int i,j;
 
@@ -11,14 +13,16 @@ void ft_put_floor(t_data *data)
         j = 0;
         while (j < data->map_dim[1])
         {
-            if (data->map[i][j] == '1')
-                mlx_put_image_to_window(data->mlx, data->win, data->floor, j*45, i*45);
-            if (data->map[i][j] == 'P')
-                mlx_put_image_to_window(data->mlx, data->win, data->player, j*45, i*45);
+           
+            mlx_put_image_to_window(data->mlx, data->win, data->floor, j*45, i*45);
             if (data->map[i][j] == 'C')
                 mlx_put_image_to_window(data->mlx, data->win, data->colectible, j*45, i*45);
             if (data->map[i][j] == 'E')
                 mlx_put_image_to_window(data->mlx, data->win, data->exit, j*45, i*45);
+            if (data->map[i][j] == '1')
+                mlx_put_image_to_window(data->mlx, data->win, data->wall, j*45, i*45);
+            if (data->map[i][j] == 'P')
+                mlx_put_image_to_window(data->mlx, data->win, data->player, j*45, i*45);
             j++;
         }
         i++;
@@ -29,8 +33,9 @@ void ft_put_floor(t_data *data)
 void ft_init_textures(t_data *data)
 {
     data->floor = mlx_xpm_file_to_image(data->mlx, "./textures/floor.xpm", &data->width, &data->height);
+    data->wall = mlx_xpm_file_to_image(data->mlx, "./textures/wall.xpm", &data->width, &data->height);
     data->player = mlx_xpm_file_to_image(data->mlx, "./textures/player.xpm", &data->width, &data->height);
-    data->colectible = mlx_xpm_file_to_image(data->mlx, "./textures/colectible.xpm", &data->width, &data->height);
+    data->colectible = mlx_xpm_file_to_image(data->mlx, "./textures/c.xpm", &data->width, &data->height);
     data->exit = mlx_xpm_file_to_image(data->mlx, "./textures/door.xpm", &data->width, &data->height);
     return ;
 }
@@ -118,26 +123,26 @@ int ft_move_player(int keycode,t_data *data)
     {
         ft_move_up(data);
         mlx_clear_window(data->mlx,data->win);
-        ft_put_floor(data);
+        ft_put_textures(data);
     }
     if (keycode == 2) // right
     {
         ft_move_right(data);
         mlx_clear_window(data->mlx,data->win);
-        ft_put_floor(data);
+        ft_put_textures(data);
     }
 
     if (keycode == 1) // down
     {
         ft_move_down(data);
         mlx_clear_window(data->mlx,data->win);
-        ft_put_floor(data);
+        ft_put_textures(data);
     }
     if (keycode == 0) // left
     {
         ft_move_left(data);
         mlx_clear_window(data->mlx,data->win);
-        ft_put_floor(data);
+        ft_put_textures(data);
     }
     return(0);
 }
@@ -146,17 +151,7 @@ void ft_start_game(t_data *data)
 {
     data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, data->map_dim[1] * 45, data->map_dim[0] * 45, "so_long");
-    ft_put_floor(data);
+    ft_put_textures(data);
     mlx_hook(data->win, 02, 0, ft_move_player, data);
 	mlx_loop(data->mlx);
 }
-
-
-
-// void ft_movement(t_data *data)
-// {
-//     int right = 2;
-//     int left = 0;
-//     mlx_hook(data->win, right, left, (void *)ft_move_player, &data);
-
-// }

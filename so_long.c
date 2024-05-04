@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/04 15:22:39 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/04 16:57:18 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_pce(t_data *data)
 	}
 	if (data->p != 1 || data->c < 1 || data->e != 1)
 	{
-		write(2, "Map compenents error", 17);
+		write(2, "Map compenents error\n", 22);
 		exit(1);
 	}
 }
