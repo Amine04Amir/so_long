@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/04 11:57:56 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/04 13:40:08 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_data
 	void 	*floor;
 	void	*player;
 	void 	*colectible;
+	void	*exit;
 	int 	width;
 	int 	height;
 }			t_data;

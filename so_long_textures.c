@@ -9,6 +9,8 @@ void ft_put_floor(t_data *data)
     data->floor = mlx_xpm_file_to_image(data->mlx, "./images/floor.xpm", &data->width, &data->height);
     data->player = mlx_xpm_file_to_image(data->mlx, "./images/hafozli9.xpm", &data->width, &data->height);
     data->colectible = mlx_xpm_file_to_image(data->mlx, "./images/mushroom.xpm", &data->width, &data->height);
+    data->exit = mlx_xpm_file_to_image(data->mlx, "./images/door.xpm", &data->width, &data->height);
+    
     i = 0;
     while (i < data->map_dim[0])
     {
@@ -22,6 +24,8 @@ void ft_put_floor(t_data *data)
                 mlx_put_image_to_window(data->mlx, data->win, data->player, j*45, i*45);
             if (data->map[i][j] == 'C')
                 mlx_put_image_to_window(data->mlx, data->win, data->colectible, j*45, i*45);
+            if (data->map[i][j] == 'E')
+                mlx_put_image_to_window(data->mlx, data->win, data->exit, j*45, i*45);
             j++;
         }
         i++;
