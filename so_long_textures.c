@@ -63,39 +63,82 @@ void ft_move_right(t_data *data)
     int px = data->px;
     int py = data->py;
 
-    printf(" px = %d | py = %d\n", data->px, data->py);
     if (data->map[py][px + 1] != '1')
     {
         data->map[py][px] = '0';
         data->map[py][px + 1] = 'P';
+        ft_player_position(data);
     }
 }
+void    ft_move_left(t_data *data)
+{
+    int px = data->px;
+    int py = data->py;
+
+    printf(" px = %d | py = %d\n", data->px, data->py);
+    if (data->map[py][px - 1] != '1')
+    {
+        data->map[py][px] = '0';
+        data->map[py][px - 1] = 'P';
+        ft_player_position(data);
+    }
+}
+
+void ft_move_up(t_data *data)
+{
+    int px = data->px;
+    int py = data->py;
+
+    if (data->map[py - 1][px] != '1')
+    {
+        data->map[py][px] = '0';
+        data->map[py - 1][px] = 'P';
+        ft_player_position(data);
+    }
+}
+void    ft_move_down(t_data *data)
+{
+    int px = data->px;
+    int py = data->py;
+
+    printf(" px = %d | py = %d\n", data->px, data->py);
+    if (data->map[py + 1][px] != '1')
+    {
+        data->map[py][px] = '0';
+        data->map[py + 1][px] = 'P';
+        ft_player_position(data);
+    }
+}
+
+
 int ft_move_player(int keycode,t_data *data)
 {
     
-    // if (keycode == 13)// up
-    // {
-
-    // }
-    // mlx_clear_window(data->mlx, data->mlx);
+    if (keycode == 13)// up
+    {
+        ft_move_up(data);
+        mlx_clear_window(data->mlx,data->win);
+        ft_put_floor(data);
+    }
     if (keycode == 2) // right
     {
-        printf(" 1px = %d | 1py = %d\n", data->px, data->py);
-
         ft_move_right(data);
         mlx_clear_window(data->mlx,data->win);
         ft_put_floor(data);
     }
 
-    // if (keycode == 1) // down
-    // {
-
-    // }
-    // if (keycode == 0) // left
-    // {
-
-    // }
-
+    if (keycode == 1) // down
+    {
+        ft_move_down(data);
+        mlx_clear_window(data->mlx,data->win);
+        ft_put_floor(data);
+    }
+    if (keycode == 0) // left
+    {
+        ft_move_left(data);
+        mlx_clear_window(data->mlx,data->win);
+        ft_put_floor(data);
+    }
     return(0);
 }
 
