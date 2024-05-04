@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/04 13:40:08 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/04 13:50:30 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_data
 }			t_data;
 
 void ft_put_floor(t_data *data);
+void ft_init_textures(t_data *data);
 
 
 
