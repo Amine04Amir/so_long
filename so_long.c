@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/03 22:35:00 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/04 15:22:39 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,6 +239,8 @@ int	main(int ac, char **av)
 		printf("arguments error\n");
 		exit(1);
 	}
+	data.px = 0;
+	data.py = 0;
 	data.map_dim[0] = ft_countline(av[1]);
 	data.map = (char **)malloc(sizeof(char *) * (data.map_dim[0] + 1));
 	map_loop(&data, av[1]);
@@ -247,5 +249,6 @@ int	main(int ac, char **av)
 	check_sides(&data, av[1]);
 	check_valid_components(av[1], &data);
 	ft_pce(&data);
-	ft_put_floor(&data);
+	ft_player_position(&data);
+	ft_start_game(&data);
 }

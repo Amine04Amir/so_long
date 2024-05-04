@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/04 13:50:30 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/04 15:23:41 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,14 @@ typedef struct s_data
 	void	*exit;
 	int 	width;
 	int 	height;
+	int		px;
+	int		py;
 }			t_data;
 
 void ft_put_floor(t_data *data);
 void ft_init_textures(t_data *data);
+void ft_start_game(t_data *data);
+void ft_player_position(t_data *data);
 
 
 
