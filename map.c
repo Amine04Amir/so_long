@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_map.c                                      :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:50:35 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 20:10:27 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 21:52:43 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,36 +111,11 @@ void	check_valid_components(char *path, t_data *data)
 	close(fd);
 }
 
-void	while_check(t_data *data, char *str, char *path)
-{
-	int	j;
-	int	i;
-	int	fd;
-
-	fd = open(path, O_RDONLY);
-	str = get_next_line(fd);
-	i = 0;
-	while (str != NULL)
-	{
-		j = 0;
-		if (i == data->map_dim[0] - 1)
-		{
-			while (str[j] != '\0')
-			{
-				if (str[j] != '1')
-					ft_error();
-				j++;
-			}
-		}
-		str = get_next_line(fd);
-		i++;
-	}
-}
 void	check_first_last_line(char *path, t_data *data)
 {
-	int i;
-	int fd;
-	char *str;
+	char	*str;
+	int		i;
+	int		fd;
 
 	fd = open(path, O_RDONLY);
 	i = 0;

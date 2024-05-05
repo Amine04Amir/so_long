@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 20:16:43 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 21:56:24 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ void		check_valid_components(char *path, t_data *data);
 void		check_sides(t_data *data, char *path);
 void		while_check(t_data *data, char *str, char *path);
 void		check_first_last_line(char *path, t_data *data);
-void		ft_error(void);
-int 		ft_exit(t_data *data);
 int			check_components(char c);
+void		ft_error(void);
+int			ft_exit(t_data *data);
+int			ft_move_player(int keycode, t_data *data);
+int			all_collected(t_data *data);
+
 #endif
