@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 12:41:04 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 19:29:29 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,43 +55,35 @@ void	ft_pce(t_data *data)
 
 void	check_first_last_line(char *path, t_data *data)
 {
-	int		fd;
-	int		i;
-	char	*str;
-	int		j;
+	variables var;
+	char	*str;	
 
-	fd = open(path, O_RDONLY);
-	i = 0;
-	str = get_next_line(fd);
-	while (str[i] != '\n')
+	var.fd = open(path, O_RDONLY);
+	var.i = 0;
+	str = get_next_line(var.fd);
+	while (str[var.i] != '\n')
 	{
-		if (str[i] != '1')
-		{
-			printf("Invalid map[star lwl]\n");
-			exit(1);
-		}
-		i++;
+		if (str[var.i] != '1')
+			ft_error();
+		var.i++;
 	}
-	i = 0;
+	var.i = 0;
 	while (str != NULL)
 	{
-		j = 0;
-		if (i == data->map_dim[0] - 1)
+		var.j = 0;
+		if (var.i == data->map_dim[0] - 1)
 		{
-			while (str[j] != '\0')
+			while (str[var.j] != '\0')
 			{
-				if (str[j] != '1')
-				{
-					printf("Invalid map[str lkher]\n");
-					exit(1);
-				}
-				j++;
+				if (str[var.j] != '1')
+					ft_error();
+				var.j++;
 			}
 		}
-		str = get_next_line(fd);
-		i++;
+		str = get_next_line(var.fd);
+		var.i++;
 	}
-	close(fd);
+	close(var.fd);
 }
 
 void	check_sides(t_data *data, char *path)
@@ -185,37 +177,32 @@ void	check_valid_components(char *path, t_data *data)
 	}
 	close(fd);
 }
+
 void	map_loop(t_data *data, char *path)
 {
-	int		i;
-	int		j;
-	int		fd;
 	char	*str;
-
-	fd = open(path, O_RDONLY);
-	if (fd < 0)
+	variables var;
+	var.fd = open(path, O_RDONLY);
+	if (var.fd < 0)
 		ft_error();
-	str = get_next_line(fd);
+	str = get_next_line(var.fd);
 	if (str == NULL)
-	{
-		printf("khawi\n");
-		exit(1);
-	}
+		ft_error();
 	data->map_dim[1] = ft_strlen(str) - 1;
-	i = 0;
-	while (i < data->map_dim[0]) 
+	var.i = 0;
+	while (var.i < data->map_dim[0])
 	{
-		j = 0;
-		data->map[i] = (char *)malloc(sizeof(char) * data->map_dim[1]);
-		while (j < data->map_dim[1])
+		var.j = 0;
+		data->map[var.i] = (char *)malloc(sizeof(char) * data->map_dim[1]);
+		while (var.j < data->map_dim[1])
 		{
-			data->map[i][j] = str[j];
-			j++;
+			data->map[var.i][var.j] = str[var.j];
+			var.j++;
 		}
-		str = get_next_line(fd);
-		i++;
+		str = get_next_line(var.fd);
+		var.i++;
 	}
-	close(fd);
+	close(var.fd);
 }
 
 int	main(int ac, char **av)
