@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:53:53 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 21:55:40 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 22:01:25 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_put_textures(t_data *data)
 {
-	int i, j;
+	int	i;
+	int	j;
+
 	ft_init_textures(data);
 	i = 0;
 	while (i < data->map_dim[0])
@@ -47,6 +49,7 @@ void	ft_put_textures(t_data *data)
 		i++;
 	}
 }
+
 void	ft_init_textures(t_data *data)
 {
 	data->floor = mlx_xpm_file_to_image(data->mlx, "./textures/floor.xpm",
@@ -56,20 +59,20 @@ void	ft_init_textures(t_data *data)
 	data->player = mlx_xpm_file_to_image(data->mlx, "./textures/player.xpm",
 			&data->width, &data->height);
 	data->colectible = mlx_xpm_file_to_image(data->mlx,
-												"./textures/colectible.xpm",
-												&data->width,
-												&data->height);
+			"./textures/colectible.xpm", &data->width, &data->height);
 	data->exit = mlx_xpm_file_to_image(data->mlx, "./textures/door.xpm",
 			&data->width, &data->height);
 	data->open = mlx_xpm_file_to_image(data->mlx, "./textures/door2.xpm",
 			&data->width, &data->height);
 }
+
 int	ft_exit(t_data *data)
 {
 	mlx_destroy_window(data->mlx, data->win);
 	write(1, "Closed!\n", 9);
 	exit(0);
 }
+
 void	ft_start_game(t_data *data)
 {
 	data->mlx = mlx_init();

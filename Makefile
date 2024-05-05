@@ -1,6 +1,6 @@
 NAME = so_long
 
-SRC = so_long.c ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c textures.c map.c utils.c game.c
+SRC = so_long.c ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c textures.c map.c utils.c game.c movement.c
 
 CC = cc -fsanitize=address -g3
 

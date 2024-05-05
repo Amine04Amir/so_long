@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:12:49 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 21:55:35 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 22:04:31 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ int	all_collected(t_data *data)
 
 void	ft_player_position(t_data *data)
 {
-	int i, j;
+	int	i;
+	int	j;
+
 	i = 0;
 	data->px = 0;
 	data->py = 0;
@@ -63,100 +65,6 @@ void	ft_player_position(t_data *data)
 	}
 }
 
-void	ft_move_right(t_data *data)
-{
-	int	px;
-	int	py;
-
-	px = data->px;
-	py = data->py;
-	if (data->map[py][px + 1] == 'E' && all_collected(data))
-	{
-		data->moves++;
-		printf("moves: %d\n", data->moves);
-		printf("YOU WIN!\n");
-		exit(0);
-	}
-	if ((data->map[py][px + 1] == '0') || (data->map[py][px + 1] == 'C'))
-	{
-		data->map[py][px] = '0';
-		data->map[py][px + 1] = 'P';
-		ft_player_position(data);
-		data->moves++;
-		printf("moves: %d\n", data->moves);
-	}
-}
-void	ft_move_left(t_data *data)
-{
-	int	px;
-	int	py;
-
-	px = data->px;
-	py = data->py;
-	if (data->map[py][px - 1] == 'E' && all_collected(data))
-	{
-		data->moves++;
-		printf("moves: %d\n", data->moves);
-		printf("YOU WIN!\n");
-		exit(0);
-	}
-	if ((data->map[py][px - 1] == '0') || (data->map[py][px - 1] == 'C'))
-	{
-		data->map[py][px] = '0';
-		data->map[py][px - 1] = 'P';
-		ft_player_position(data);
-		data->moves++;
-		printf("moves: %d\n", data->moves);
-	}
-}
-
-void	ft_move_up(t_data *data)
-{
-	int	px;
-	int	py;
-
-	px = data->px;
-	py = data->py;
-	if (data->map[py - 1][px] == 'E' && all_collected(data))
-	{
-		data->moves++;
-		printf("moves: %d\n", data->moves);
-		printf("YOU WIN!\n");
-		exit(0);
-	}
-	if ((data->map[py - 1][px] == '0') || (data->map[py - 1][px] == 'C'))
-	{
-		data->map[py][px] = '0';
-		data->map[py - 1][px] = 'P';
-		ft_player_position(data);
-		data->moves++;
-		printf("moves: %d\n", data->moves);
-	}
-}
-
-void	ft_move_down(t_data *data)
-{
-	int	px;
-	int	py;
-
-	px = data->px;
-	py = data->py;
-	if (data->map[py + 1][px] == 'E' && all_collected(data))
-	{
-		data->moves++;
-		printf("moves: %d\n", data->moves);
-		printf("YOU WIN!\n");
-		exit(0);
-	}
-	if ((data->map[py + 1][px] == '0') || (data->map[py + 1][px] == 'C'))
-	{
-		data->map[py][px] = '0';
-		data->map[py + 1][px] = 'P';
-		ft_player_position(data);
-		data->moves++;
-		printf("moves: %d\n", data->moves);
-	}
-}
 int	ft_move_player(int keycode, t_data *data)
 {
 	if (keycode == 13)
@@ -189,6 +97,3 @@ int	ft_move_player(int keycode, t_data *data)
 	}
 	return (0);
 }
-
-
-
