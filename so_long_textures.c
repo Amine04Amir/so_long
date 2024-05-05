@@ -1,7 +1,27 @@
 #include "so_long.h"
 
 
-
+int all_collected(t_data *data)
+{
+    int i,j;
+    int c;
+    i = 0;
+    c = 0; 
+    while (i < data->map_dim[0])
+    {
+        j = 0;
+        while (j < data->map_dim[1])
+        {
+            if (data->map[i][j] == 'C')
+                c++;
+            j++;
+        }
+        i++;
+    }
+    if (c == 0)
+        return (1);
+    return (0);
+}
 void ft_put_textures(t_data *data)
 {
     int i,j;
@@ -13,7 +33,6 @@ void ft_put_textures(t_data *data)
         j = 0;
         while (j < data->map_dim[1])
         {
-           
             mlx_put_image_to_window(data->mlx, data->win, data->floor, j*45, i*45);
             if (data->map[i][j] == 'C')
                 mlx_put_image_to_window(data->mlx, data->win, data->colectible, j*45, i*45);
@@ -21,8 +40,8 @@ void ft_put_textures(t_data *data)
             {
                 if(all_collected(data))
                     mlx_put_image_to_window(data->mlx, data->win, data->open, j*45, i*45);
-                mlx_put_image_to_window(data->mlx, data->win, data->exit, j*45, i*45); 
-
+                else
+                    mlx_put_image_to_window(data->mlx, data->win, data->exit, j*45, i*45);
             }
             if (data->map[i][j] == '1')
                 mlx_put_image_to_window(data->mlx, data->win, data->wall, j*45, i*45);
@@ -41,7 +60,7 @@ void ft_init_textures(t_data *data)
     data->player = mlx_xpm_file_to_image(data->mlx, "./textures/player.xpm", &data->width, &data->height);
     data->colectible = mlx_xpm_file_to_image(data->mlx, "./textures/colectible.xpm", &data->width, &data->height);
     data->exit = mlx_xpm_file_to_image(data->mlx, "./textures/door.xpm", &data->width, &data->height);
-    return ;
+    data->open = mlx_xpm_file_to_image(data->mlx, "./textures/door2.xpm", &data->width, &data->height);
 }
 void ft_player_position(t_data *data)
 {
