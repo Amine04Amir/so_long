@@ -22,6 +22,7 @@ int all_collected(t_data *data)
         return (1);
     return (0);
 }
+
 void ft_put_textures(t_data *data)
 {
     int i,j;
@@ -79,6 +80,11 @@ void ft_player_position(t_data *data)
                 data->px = j;
                 data->py = i;
             }
+            if (data->map[i][j] == 'E')
+            {
+                data->ex = j;
+                data->ey = i;
+            }
             j++;
         }
         i++;
@@ -90,7 +96,14 @@ void ft_move_right(t_data *data)
     int px = data->px;
     int py = data->py;
 
-    if ((data->map[py][px + 1] != '1') && (data->map[py][px + 1] != 'E'))
+    if (data->map[py][px + 1] == 'E' && all_collected(data))
+    {
+        data->moves++;
+        printf("%d\n", data->moves);
+        printf("YOU WIN!\n");
+        exit(0);
+    }
+    if ((data->map[py][px + 1] == '0') || (data->map[py][px + 1] == 'C'))
     {
         data->map[py][px] = '0';
         data->map[py][px + 1] = 'P';
@@ -104,7 +117,14 @@ void    ft_move_left(t_data *data)
     int px = data->px;
     int py = data->py;
 
-    if ((data->map[py][px - 1] != '1') && (data->map[py][px - 1] != 'E'))
+    if (data->map[py][px - 1] == 'E' && all_collected(data))
+    {
+        data->moves++;
+        printf("%d\n", data->moves);
+        printf("YOU WIN!\n");
+        exit(0);
+    }
+    if ((data->map[py][px - 1] == '0') || (data->map[py][px - 1] == 'C'))
     {
         data->map[py][px] = '0';
         data->map[py][px - 1] = 'P';
@@ -119,7 +139,14 @@ void ft_move_up(t_data *data)
     int px = data->px;
     int py = data->py;
 
-    if ((data->map[py - 1][px] != '1') && (data->map[py - 1][px] != 'E'))
+    if (data->map[py - 1][px] == 'E' && all_collected(data))
+    {
+        data->moves++;
+        printf("%d\n", data->moves);
+        printf("YOU WIN!\n");
+        exit(0);
+    }
+    if ((data->map[py - 1][px] == '0') || (data->map[py - 1][px] == 'C'))
     {
         data->map[py][px] = '0';
         data->map[py - 1][px] = 'P';
@@ -134,7 +161,14 @@ void    ft_move_down(t_data *data)
     int px = data->px;
     int py = data->py;
 
-    if ((data->map[py + 1][px] != '1') && (data->map[py + 1][px] != 'E'))
+    if (data->map[py + 1][px] == 'E' && all_collected(data))
+    {
+        data->moves++;
+        printf("%d\n", data->moves);
+        printf("YOU WIN!\n");
+        exit(0);
+    }
+    if ((data->map[py + 1][px] == '0') || (data->map[py + 1][px] == 'C'))
     {
         data->map[py][px] = '0';
         data->map[py + 1][px] = 'P';
@@ -143,8 +177,6 @@ void    ft_move_down(t_data *data)
         printf("moves: %d\n", data->moves);
     }
 }
-
-
 int ft_move_player(int keycode,t_data *data)
 {
     if (keycode == 13) // up
