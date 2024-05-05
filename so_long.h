@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 22:23:33 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 22:27:30 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		ft_put_textures(t_data *data);
 void		ft_init_textures(t_data *data);
 void		ft_start_game(t_data *data);
 int			ft_exit(t_data *data);
-void 		ft_put_exit(t_data *data);
+void		ft_put_exit(t_data *data);
 
 void		map_loop(t_data *data, char *path);
 void		check_rectangular(char *path);

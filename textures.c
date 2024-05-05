@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:53:53 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 22:26:52 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 22:32:47 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void	ft_put_exit(t_data *data)
 			{
 				if (all_collected(data))
 					mlx_put_image_to_window(data->mlx, data->win, data->open, j
-							* 45, i * 45);
+						* 45, i * 45);
 				else
 					mlx_put_image_to_window(data->mlx, data->win, data->exit, j
-							* 45, i * 45);
+						* 45, i * 45);
 			}
 			if (data->map[i][j] == 'C')
 				mlx_put_image_to_window(data->mlx, data->win, data->colectible,
-						j * 45, i * 45);
+					j * 45, i * 45);
 			j++;
 		}
 		i++;
@@ -54,14 +54,14 @@ void	ft_put_textures(t_data *data)
 		while (j < data->map_dim[1])
 		{
 			mlx_put_image_to_window(data->mlx, data->win, data->floor, j * 45, i
-					* 45);
+				* 45);
 			ft_put_exit(data);
 			if (data->map[i][j] == '1')
 				mlx_put_image_to_window(data->mlx, data->win, data->wall, j
-						* 45, i * 45);
+					* 45, i * 45);
 			if (data->map[i][j] == 'P')
 				mlx_put_image_to_window(data->mlx, data->win, data->player, j
-						* 45, i * 45);
+					* 45, i * 45);
 			j++;
 		}
 		i++;
@@ -77,9 +77,9 @@ void	ft_init_textures(t_data *data)
 	data->player = mlx_xpm_file_to_image(data->mlx, "./textures/player.xpm",
 			&data->width, &data->height);
 	data->colectible = mlx_xpm_file_to_image(data->mlx,
-												"./textures/colectible.xpm",
-												&data->width,
-												&data->height);
+			"./textures/colectible.xpm",
+			&data->width,
+			&data->height);
 	data->exit = mlx_xpm_file_to_image(data->mlx, "./textures/door.xpm",
 			&data->width, &data->height);
 	data->open = mlx_xpm_file_to_image(data->mlx, "./textures/door2.xpm",
