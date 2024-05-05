@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:12:49 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 22:04:31 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 22:18:01 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,35 +65,45 @@ void	ft_player_position(t_data *data)
 	}
 }
 
-int	ft_move_player(int keycode, t_data *data)
+int	ft_keys(int keycode, t_data *data)
 {
-	if (keycode == 13)
-	{
-		ft_move_up(data);
-		mlx_clear_window(data->mlx, data->win);
-		ft_put_textures(data);
-	}
-	if (keycode == 2)
+	ft_right_left(keycode, data);
+	ft_up_down(keycode, data);
+	if (keycode == 53)
+		ft_exit(data);
+	return (0);
+}
+
+int ft_right_left(int keycode, t_data *data)
+{
+	if (keycode == 2) //right
 	{
 		ft_move_right(data);
 		mlx_clear_window(data->mlx, data->win);
 		ft_put_textures(data);
 	}
-	if (keycode == 1)
-	{
-		ft_move_down(data);
-		mlx_clear_window(data->mlx, data->win);
-		ft_put_textures(data);
-	}
-	if (keycode == 0)
+	if (keycode == 0) //left
 	{
 		ft_move_left(data);
 		mlx_clear_window(data->mlx, data->win);
 		ft_put_textures(data);
 	}
-	if (keycode == 53)
+	return (0);
+}
+
+int ft_up_down(int keycode, t_data *data)
+{
+	if (keycode == 13) //up
 	{
-		ft_exit(data);
+		ft_move_up(data);
+		mlx_clear_window(data->mlx, data->win);
+		ft_put_textures(data);
+	}
+	if (keycode == 1) //down
+	{
+		ft_move_down(data);
+		mlx_clear_window(data->mlx, data->win);
+		ft_put_textures(data);
 	}
 	return (0);
 }

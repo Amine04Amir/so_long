@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 19:49:56 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 22:11:05 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	write(2, "Invalid map!", 13);
+	write(2, "Invalid!", 9);
 	exit(1);
 }
 
@@ -83,10 +83,7 @@ int	main(int ac, char **av)
 	if (fd < 0)
 		ft_error();
 	if (ac != 2)
-	{
-		printf("arguments error\n");
-		exit(1);
-	}
+		ft_error();
 	data.px = 0;
 	data.py = 0;
 	data.map_dim[0] = ft_countline(av[1]);

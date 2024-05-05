@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 22:05:00 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 22:17:18 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,24 +52,30 @@ typedef struct s_var
 	int		fd;
 }			t_var;
 
-void		ft_put_textures(t_data *data);
+void		ft_put_textures(t_data *data); /*textures.c*/
 void		ft_init_textures(t_data *data);
 void		ft_start_game(t_data *data);
-void		ft_player_position(t_data *data);
-void		map_loop(t_data *data, char *path);
-void		check_rectangular(char *path);
-void		check_valid_components(char *path, t_data *data);
-void		check_sides(t_data *data, char *path);
-void		while_check(t_data *data, char *str, char *path);
-void		check_first_last_line(char *path, t_data *data);
-int			check_components(char c);
-void		ft_error(void);
 int			ft_exit(t_data *data);
-int			ft_move_player(int keycode, t_data *data);
-int			all_collected(t_data *data);
-void	ft_move_right(t_data *data);
-void	ft_move_left(t_data *data);
-void	ft_move_up(t_data *data);
-void	ft_move_down(t_data *data);
+
+void		map_loop(t_data *data, char *path); /*map.c*/
+void		check_rectangular(char *path);
+void		check_sides(t_data *data, char *path);
+void		check_valid_components(char *path, t_data *data);
+void		check_first_last_line(char *path, t_data *data);
+
+void		ft_player_position(t_data *data);
+int			all_collected(t_data *data); /*game.c*/
+int			ft_keys(int keycode, t_data *data);
+
+void		ft_move_right(t_data *data); /*movement.c*/
+void		ft_move_left(t_data *data);
+void		ft_move_up(t_data *data);
+void		ft_move_down(t_data *data);
+int 		ft_right_left(int keycode, t_data *data);
+int 		ft_up_down(int keycode, t_data *data);
+
+void		while_check(t_data *data, char *str, char *path); /*utils*/
+void		ft_error(void);
+int			check_components(char c);
 
 #endif
