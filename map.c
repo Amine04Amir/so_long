@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:50:35 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 20:09:48 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 20:10:27 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void	check_rectangular(char *path)
 	close(fd);
 }
 
-
-
 void	check_sides(t_data *data, char *path)
 {
 	int		i;
@@ -115,10 +113,10 @@ void	check_valid_components(char *path, t_data *data)
 
 void	while_check(t_data *data, char *str, char *path)
 {
-	int j;
-	int i;
-	int fd;
-	
+	int	j;
+	int	i;
+	int	fd;
+
 	fd = open(path, O_RDONLY);
 	str = get_next_line(fd);
 	i = 0;
@@ -142,7 +140,7 @@ void	check_first_last_line(char *path, t_data *data)
 {
 	int i;
 	int fd;
-	char	*str;
+	char *str;
 
 	fd = open(path, O_RDONLY);
 	i = 0;

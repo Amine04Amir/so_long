@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_textures.c                                 :+:      :+:    :+:   */
+/*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:12:49 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 19:31:14 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/05 20:14:14 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,6 +231,11 @@ int	ft_move_player(int keycode, t_data *data)
 	}
 	return (0);
 }
+int ft_exit(void)
+{
+	write(1, "Closed!\n", 9);
+	exit(0);
+}
 
 void	ft_start_game(t_data *data)
 {
@@ -241,5 +246,6 @@ void	ft_start_game(t_data *data)
 	data->moves = 0;
 	printf("moves: %d\n", data->moves);
 	mlx_hook(data->win, 02, 0, ft_move_player, data);
+	mlx_hook(data->win, 17, 0, ft_exit, data);
 	mlx_loop(data->mlx);
 }
