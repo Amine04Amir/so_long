@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:12:49 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 22:19:25 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/06 15:34:17 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ int	ft_keys(int keycode, t_data *data)
 
 int	ft_right_left(int keycode, t_data *data)
 {
-	if (keycode == 2)
+	if (keycode == 2 || keycode == 124)
 	{
 		ft_move_right(data);
 		mlx_clear_window(data->mlx, data->win);
 		ft_put_textures(data);
 	}
-	if (keycode == 0)
+	if (keycode == 0 || keycode == 123)
 	{
 		ft_move_left(data);
 		mlx_clear_window(data->mlx, data->win);
@@ -93,13 +93,13 @@ int	ft_right_left(int keycode, t_data *data)
 
 int	ft_up_down(int keycode, t_data *data)
 {
-	if (keycode == 13)
+	if (keycode == 13 || keycode == 126)
 	{
 		ft_move_up(data);
 		mlx_clear_window(data->mlx, data->win);
 		ft_put_textures(data);
 	}
-	if (keycode == 1)
+	if (keycode == 1 || keycode == 125)
 	{
 		ft_move_down(data);
 		mlx_clear_window(data->mlx, data->win);
