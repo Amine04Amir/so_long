@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/06 18:35:32 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/06 18:53:04 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ int	main(int ac, char **av)
         filename = av[1];
     else
         filename++;
-    char *file_extension = strrchr(filename, '.');
-    if (file_extension == NULL || strcmp(file_extension, ".ber") != 0 || strlen(filename) <= 4)
+    char *file_extension = ft_strrchr(filename, '.');
+    if (file_extension == NULL || strcmp(file_extension, ".ber") != 0 || ft_strlen(filename) <= 4)
         ft_error();
 	data.px = 0;
 	data.py = 0;
