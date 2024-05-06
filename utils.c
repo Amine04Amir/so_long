@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:51:23 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/06 19:06:56 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/06 19:09:39 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	while_check(t_data *data, char *str, char *path)
 		i++;
 	}
 }
+
 char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
@@ -67,13 +68,15 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 void	check_extension(char *path)
 {
-	char *filename;
+	char	*filename;
+	char	*file_extension;
+
 	filename = ft_strrchr(path, '/');
 	if (filename == NULL)
 		filename = path;
 	else
 		filename++;
-	char *file_extension = ft_strrchr(filename, '.');
+	file_extension = ft_strrchr(filename, '.');
 	if (file_extension == NULL || ft_strcmp(file_extension, ".ber") != 0
 		|| ft_strlen(filename) <= 4)
 		ft_error();

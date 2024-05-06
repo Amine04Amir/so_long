@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/06 19:04:26 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/06 19:08:10 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int	main(int ac, char **av)
 {
 	t_data	data;
 	int		fd;
-	
 
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
