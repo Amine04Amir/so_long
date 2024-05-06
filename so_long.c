@@ -6,12 +6,13 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/06 18:53:04 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/06 19:04:26 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <string.h>
+
 void	ft_error(void)
 {
 	write(2, "Invalid!", 9);
@@ -78,20 +79,14 @@ int	main(int ac, char **av)
 {
 	t_data	data;
 	int		fd;
+	
 
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
 		ft_error();
 	if (ac != 2)
 		ft_error();
-	char *filename = strrchr(av[1], '/');
-    if (filename == NULL)
-        filename = av[1];
-    else
-        filename++;
-    char *file_extension = ft_strrchr(filename, '.');
-    if (file_extension == NULL || strcmp(file_extension, ".ber") != 0 || ft_strlen(filename) <= 4)
-        ft_error();
+	check_extension(av[1]);
 	data.px = 0;
 	data.py = 0;
 	data.map_dim[0] = ft_countline(av[1]);

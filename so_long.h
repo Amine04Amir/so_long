@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/06 18:53:26 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/06 19:05:13 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ void		while_check(t_data *data, char *str, char *path);
 void		ft_error(void);
 char		*ft_strrchr(const char *str, int c);
 int			check_components(char c);
+void 		check_extension(char *path);
 
 #endif
