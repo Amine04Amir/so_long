@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/07 16:11:04 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/07 16:16:44 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include "./get_next_line/get_next_line.h"
+# include "./ft_printf/ft_printf.h"
 # include "mlx.h"
 # include <math.h>
 # include <stdio.h>

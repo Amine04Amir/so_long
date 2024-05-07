@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:27:51 by mamir             #+#    #+#             */
-/*   Updated: 2023/12/17 12:27:57 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/07 16:20:23 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,27 +69,3 @@ int	ft_printf(const char *str, ...)
 	va_end(list);
 	return (count);
 }
-/*int main(void)
-{
-	int number = -2146222224;
-	printf("number printed is: %d\n", ft_printf("%%c: %c\n%%s: %s\n%%p: %p\n%%d:
-			%d\n%%i: %i\n%%u: %u\n%%x: %x\n%%X: %X\n%%%%\n", 'A', "Hello,
-			World!", &number, number, number, number, number, number));
-
-	printf("number printed is: %d\n", printf("%%c: %c\n%%s: %s\n%%p: %p\n%%d:
-			%d\n%%i: %i\n%%u: %u\n%%x: %x\n%%X: %X\n%%%%\n", 'A', "Hello,
-			World!", &number, number, number, number, number, number));
-
-	return (0);
-}*/
-// #include <stdio.h>
-
-// int main()
-// {
-// 	int x, y;
-// 	x = 56;
-// 	y = 22;
-
-// 	ft_printf("%p\t%p\n", &x, &y);
-// 	printf("%p\t%p", &x, &y);
-// }
