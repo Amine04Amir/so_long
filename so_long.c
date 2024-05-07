@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/06 19:08:10 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/07 13:08:13 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void	ft_pce(t_data *data)
 	int	i;
 	int	j;
 
+	data->p = 0;
+	data->c = 0;
+	data->e = 0;
 	i = 0;
 	while (i < data->map_dim[0])
 	{
@@ -48,10 +51,7 @@ void	ft_pce(t_data *data)
 		i++;
 	}
 	if (data->p != 1 || data->c < 1 || data->e != 1)
-	{
-		write(2, "Map compenents error\n", 22);
-		exit(1);
-	}
+		ft_error();
 }
 
 int	ft_countline(char *path)
@@ -96,6 +96,8 @@ int	main(int ac, char **av)
 	check_sides(&data, av[1]);
 	check_valid_components(av[1], &data);
 	ft_pce(&data);
+	ft_duplicate(&data, av[1]);
 	ft_player_position(&data);
 	ft_start_game(&data);
+	// system("leaks so_long");
 }

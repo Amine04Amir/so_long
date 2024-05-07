@@ -1,9 +1,9 @@
 NAME = so_long
 
-SRC = so_long.c textures.c map.c utils.c game.c movement.c \
+SRC = so_long.c textures.c map.c utils.c game.c movement.c floodfill.c \
       ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c \
 
-CC = cc -fsanitize=address -g3
+CC = cc #-fsanitize=address -g3
 
 CFLAGS = -Wall -Wextra -Werror
 
