@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/07 13:08:13 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/07 16:05:39 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_error(void)
 {
-	write(2, "Invalid!", 9);
+	write(2, "Invalid!\n", 10);
 	exit(1);
 }
 
@@ -99,5 +99,4 @@ int	main(int ac, char **av)
 	ft_duplicate(&data, av[1]);
 	ft_player_position(&data);
 	ft_start_game(&data);
-	// system("leaks so_long");
 }

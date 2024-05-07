@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/07 14:34:55 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/07 16:11:04 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_data
 	int		py;
 	int		ex;
 	int		ey;
-	int		moves;
+	char		moves;
 }			t_data;
 
 typedef struct s_var
@@ -63,9 +63,9 @@ void		check_rectangular(char *path);
 void		check_sides(t_data *data, char *path);
 void		check_valid_components(char *path, t_data *data);
 void		check_first_last_line(char *path, t_data *data);
-void    	ft_duplicate(t_data *data, char *path);
-void 		ft_copie(t_data *data, char *path, char **copie);
-void 		flood_fill(t_data *data, char **copie, int x, int y);
+void		ft_duplicate(t_data *data, char *path);
+void		ft_copie(t_data *data, char *path, char **copie);
+void		flood_fill(t_data *data, char **copie, int x, int y);
 
 void		ft_player_position(t_data *data);
 int			all_collected(t_data *data);

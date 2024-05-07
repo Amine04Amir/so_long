@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:51:23 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/06 19:09:39 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/07 15:02:44 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	while_check(t_data *data, char *str, char *path)
 				j++;
 			}
 		}
+		free(str);
 		str = get_next_line(fd);
 		i++;
 	}

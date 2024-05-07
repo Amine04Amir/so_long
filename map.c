@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:50:35 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/05 21:52:43 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/07 15:29:24 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	map_loop(t_data *data, char *path)
 			data->map[var.i][var.j] = str[var.j];
 			var.j++;
 		}
+		free(str);
 		str = get_next_line(var.fd);
 		var.i++;
 	}
@@ -53,9 +54,10 @@ void	check_rectangular(char *path)
 	{
 		if (ft_strlen1(str) != len)
 		{
-			printf("Invalid map[rect]\n");
+			write(2,"Invalid, map not rectangular", 29);
 			exit(1);
 		}
+		free(str);
 		str = get_next_line(fd);
 	}
 	close(fd);
@@ -74,9 +76,10 @@ void	check_sides(t_data *data, char *path)
 	{
 		if (str[0] != '1' || str[data->map_dim[1] - 1] != '1')
 		{
-			printf("Invalid map[sides]\n");
+			write(2, "Invalid Sides!\n", 16);
 			exit(1);
 		}
+		free(str);
 		str = get_next_line(fd);
 		i++;
 	}
@@ -100,11 +103,12 @@ void	check_valid_components(char *path, t_data *data)
 		{
 			if (!check_components(str[j]))
 			{
-				printf("Invalid map[components]\n");
+				write(2, "Invalid components\n", 20);
 				exit(1);
 			}
 			j++;
 		}
+		free(str);
 		str = get_next_line(fd);
 		i++;
 	}
@@ -128,5 +132,6 @@ void	check_first_last_line(char *path, t_data *data)
 	}
 	i = 0;
 	while_check(data, str, path);
+	free(str);
 	close(fd);
 }
