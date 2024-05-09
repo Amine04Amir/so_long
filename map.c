@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:50:35 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/07 15:29:24 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:08:24 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,29 @@
 
 void	map_loop(t_data *data, char *path)
 {
+	int		i;
+	int		j;
+	int		fd;
 	char	*str;
-	t_var	var;
 
-	var.fd = open(path, O_RDONLY);
-	if (var.fd < 0)
-		ft_error();
-	str = get_next_line(var.fd);
-	if (str == NULL)
-		ft_error();
+	fd = open(path, O_RDONLY);
+	str = get_next_line(fd);
 	data->map_dim[1] = ft_strlen(str) - 1;
-	var.i = 0;
-	while (var.i < data->map_dim[0])
+	i = 0;
+	while (i < data->map_dim[0])
 	{
-		var.j = 0;
-		data->map[var.i] = (char *)malloc(sizeof(char) * data->map_dim[1]);
-		while (var.j < data->map_dim[1])
+		j = 0;
+		data->map[i] = (char *)malloc(sizeof(char) * data->map_dim[1]);
+		while (j < data->map_dim[1])
 		{
-			data->map[var.i][var.j] = str[var.j];
-			var.j++;
+			data->map[i][j] = str[j];
+			j++;
 		}
 		free(str);
-		str = get_next_line(var.fd);
-		var.i++;
+		str = get_next_line(fd);
+		i++;
 	}
-	close(var.fd);
+	close(fd);
 }
 
 void	check_rectangular(char *path)
@@ -53,10 +51,7 @@ void	check_rectangular(char *path)
 	while (str != NULL)
 	{
 		if (ft_strlen1(str) != len)
-		{
-			write(2,"Invalid, map not rectangular", 29);
-			exit(1);
-		}
+			ft_error("map not rectangular\n");
 		free(str);
 		str = get_next_line(fd);
 	}
@@ -75,10 +70,7 @@ void	check_sides(t_data *data, char *path)
 	while (i < data->map_dim[0] && str != NULL)
 	{
 		if (str[0] != '1' || str[data->map_dim[1] - 1] != '1')
-		{
-			write(2, "Invalid Sides!\n", 16);
-			exit(1);
-		}
+			ft_error("Invalid Sides!\n");
 		free(str);
 		str = get_next_line(fd);
 		i++;
@@ -102,10 +94,7 @@ void	check_valid_components(char *path, t_data *data)
 		while (j < data->map_dim[1])
 		{
 			if (!check_components(str[j]))
-			{
-				write(2, "Invalid components\n", 20);
-				exit(1);
-			}
+				ft_error("Invalid components\n");
 			j++;
 		}
 		free(str);
@@ -127,7 +116,7 @@ void	check_first_last_line(char *path, t_data *data)
 	while (str[i] != '\n')
 	{
 		if (str[i] != '1')
-			ft_error();
+			ft_error("first line or last line not 1\n");
 		i++;
 	}
 	i = 0;

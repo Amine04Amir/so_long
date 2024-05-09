@@ -6,15 +6,15 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/07 16:16:44 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/09 16:25:32 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "./get_next_line/get_next_line.h"
 # include "./ft_printf/ft_printf.h"
+# include "./get_next_line/get_next_line.h"
 # include "mlx.h"
 # include <math.h>
 # include <stdio.h>
@@ -41,23 +41,15 @@ typedef struct s_data
 	int		py;
 	int		ex;
 	int		ey;
-	char		moves;
+	char	moves;
 }			t_data;
-
-typedef struct s_var
-{
-	int		i;
-	int		j;
-	int		x;
-	int		y;
-	int		fd;
-}			t_var;
 
 void		ft_put_textures(t_data *data);
 void		ft_init_textures(t_data *data);
 void		ft_start_game(t_data *data);
 int			ft_exit(t_data *data);
 void		ft_put_exit(t_data *data);
+void		check_xmp(void *img);
 
 void		map_loop(t_data *data, char *path);
 void		check_rectangular(char *path);
@@ -80,7 +72,7 @@ int			ft_right_left(int keycode, t_data *data);
 int			ft_up_down(int keycode, t_data *data);
 
 void		while_check(t_data *data, char *str, char *path);
-void		ft_error(void);
+void		ft_error(char *str);
 char		*ft_strrchr(const char *str, int c);
 int			check_components(char c);
 void		check_extension(char *path);

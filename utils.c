@@ -6,11 +6,17 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:51:23 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/07 15:02:44 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/09 16:25:02 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	check_xmp(void *img)
+{
+	if (!img)
+		ft_error("Invalid XPM\n");
+}
 
 void	while_check(t_data *data, char *str, char *path)
 {
@@ -29,7 +35,7 @@ void	while_check(t_data *data, char *str, char *path)
 			while (str[j] != '\0')
 			{
 				if (str[j] != '1')
-					ft_error();
+					ft_error("in lines\n");
 				j++;
 			}
 		}
@@ -80,5 +86,5 @@ void	check_extension(char *path)
 	file_extension = ft_strrchr(filename, '.');
 	if (file_extension == NULL || ft_strcmp(file_extension, ".ber") != 0
 		|| ft_strlen(filename) <= 4)
-		ft_error();
+		ft_error("Bad Extension!\n");
 }

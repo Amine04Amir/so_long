@@ -6,16 +6,17 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/07 16:05:39 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:05:48 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <string.h>
 
-void	ft_error(void)
+void	ft_error(char *str)
 {
-	write(2, "Invalid!\n", 10);
+	write(2, "Error\n", 7);
+	ft_printf("%s", str);
 	exit(1);
 }
 
@@ -51,7 +52,7 @@ void	ft_pce(t_data *data)
 		i++;
 	}
 	if (data->p != 1 || data->c < 1 || data->e != 1)
-		ft_error();
+		ft_error("Bad Components!\n");
 }
 
 int	ft_countline(char *path)
@@ -62,8 +63,10 @@ int	ft_countline(char *path)
 
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		return (0);
+		ft_error("Wrong map");
 	str = get_next_line(fd);
+	if (str == NULL)
+		ft_error("Empty map");
 	i = 0;
 	while (str != NULL)
 	{
@@ -82,9 +85,9 @@ int	main(int ac, char **av)
 
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
-		ft_error();
+		ft_error("Enter Map!\n");
 	if (ac != 2)
-		ft_error();
+		ft_error("Arguments Error!\n");
 	check_extension(av[1]);
 	data.px = 0;
 	data.py = 0;

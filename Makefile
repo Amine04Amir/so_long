@@ -8,7 +8,7 @@ PRINTF = ./ft_printf/libftprintf.a
 CC = cc 
 CFLAGS = -Wall -Wextra -Werror
 
-all : header ${NAME} 
+all : ${NAME} 
 
 %.o:%.c
 	$(CC) $(CFLAGS) -c  $< -o $@ 
@@ -33,21 +33,3 @@ re : fclean all
 .PHONY: all clean fclean re
 
 .SECONDARY: $(OBJ)
-
-
-
-
-
-WHITE = \033[0;97m
-NC = \033[0m
-GREEN = \033[1;32m
-header:
-	
-	@echo "$(GREEN)"
-	@echo "███████╗ ██████╗         ██╗      ██████╗ ███╗   ██╗ ██████╗ "
-	@echo "██╔════╝██╔═══██╗        ██║     ██╔═══██╗████╗  ██║██╔════╝ "
-	@echo "███████╗██║   ██║        ██║     ██║   ██║██╔██╗ ██║██║  ███╗"
-	@echo "╚════██║██║   ██║        ██║     ██║   ██║██║╚██╗██║██║   ██║"
-	@echo "███████║╚██████╔╝███████╗███████╗╚██████╔╝██║ ╚████║╚██████╔╝"
-	@echo "╚══════╝ ╚═════╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ "
-	@echo "$(NC)"  
