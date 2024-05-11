@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/11 12:02:46 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/11 12:12:39 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_data
 	int		py;
 	int		ex;
 	int		ey;
-	char	moves;
+	size_t	moves;
 	char	movement[200];
 }			t_data;
 

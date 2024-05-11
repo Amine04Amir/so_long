@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 22:02:24 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/10 20:17:14 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/11 12:44:10 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void	ft_move_right(t_data *data)
 	if (data->map[py][px + 1] == 'E' && all_collected(data))
 	{
 		data->moves++;
-		ft_printf("moves: %d\n", data->moves);
-		write(1, "RA7MA LKAWNIA WINS!\n", 21);
+		write(1, "You Win!\n", 10);
 		exit(0);
 	}
 	if ((data->map[py][px + 1] == '0') || (data->map[py][px + 1] == 'C'))
@@ -32,7 +31,6 @@ void	ft_move_right(t_data *data)
 		data->map[py][px + 1] = 'P';
 		ft_player_position(data);
 		data->moves++;
-		ft_printf("moves: %d\n", data->moves);
 	}
 }
 
@@ -46,8 +44,7 @@ void	ft_move_left(t_data *data)
 	if (data->map[py][px - 1] == 'E' && all_collected(data))
 	{
 		data->moves++;
-		ft_printf("moves: %d\n", data->moves);
-		write(1, "RA7MA LKAWNIA WINS!\n", 21);
+		write(1, "You Win!\n", 10);
 		exit(0);
 	}
 	if ((data->map[py][px - 1] == '0') || (data->map[py][px - 1] == 'C'))
@@ -56,7 +53,6 @@ void	ft_move_left(t_data *data)
 		data->map[py][px - 1] = 'P';
 		ft_player_position(data);
 		data->moves++;
-		ft_printf("moves: %d\n", data->moves);
 	}
 }
 
@@ -70,8 +66,7 @@ void	ft_move_up(t_data *data)
 	if (data->map[py - 1][px] == 'E' && all_collected(data))
 	{
 		data->moves++;
-		ft_printf("moves: %d\n", data->moves);
-		write(1, "RA7MA LKAWNIA WINS!\n", 21);
+		write(1, "You Win!\n", 10);
 		exit(0);
 	}
 	if ((data->map[py - 1][px] == '0') || (data->map[py - 1][px] == 'C'))
@@ -80,7 +75,6 @@ void	ft_move_up(t_data *data)
 		data->map[py - 1][px] = 'P';
 		ft_player_position(data);
 		data->moves++;
-		ft_printf("moves: %d\n", data->moves);
 	}
 }
 
@@ -94,8 +88,7 @@ void	ft_move_down(t_data *data)
 	if (data->map[py + 1][px] == 'E' && all_collected(data))
 	{
 		data->moves++;
-		ft_printf("moves: %d\n", data->moves);
-		write(1, "RA7MA LKAWNIA WINS!\n", 21);
+		write(1, "You Win!\n", 10);
 		exit(0);
 	}
 	if ((data->map[py + 1][px] == '0') || (data->map[py + 1][px] == 'C'))
@@ -104,6 +97,5 @@ void	ft_move_down(t_data *data)
 		data->map[py + 1][px] = 'P';
 		ft_player_position(data);
 		data->moves++;
-		ft_printf("moves: %d\n", data->moves);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:53:53 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/11 12:03:14 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/11 12:14:17 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_put_textures(t_data *data)
 		}
 		i++;
 	}
-	sprintf(data->movement, "Moves: %d", data->moves);
+	sprintf(data->movement, "Moves: %zu", data->moves);
 	mlx_string_put(data->mlx, data->win, 9 , 15, 0xffffff, data->movement);
 }
 
