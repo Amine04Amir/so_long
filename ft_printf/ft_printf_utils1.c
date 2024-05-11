@@ -6,11 +6,21 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:28:08 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/07 16:18:21 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/10 14:58:53 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_strlen2(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 int	ft_putchar(int c)
 {
@@ -29,7 +39,7 @@ int	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-	return (ft_strlen(str));
+	return (ft_strlen2(str));
 }
 
 int	ft_putnbr(int n)
