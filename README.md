@@ -1,4 +1,4 @@
-<img src="/textures/peview.png" alt="Screenshot">   
+<img src="/textures/preview.png" alt="Screenshot">   
 
 ## Summary:
 _This project is a very small 2D game.
