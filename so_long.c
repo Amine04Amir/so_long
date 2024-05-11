@@ -6,12 +6,11 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:07 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/09 15:05:48 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/10 11:46:11 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <string.h>
 
 void	ft_error(char *str)
 {

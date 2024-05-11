@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:53:53 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/09 16:26:44 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/11 10:57:42 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_init_textures(t_data *data)
 	data->floor = mlx_xpm_file_to_image(data->mlx, "./textures/wood.xpm",
 			&data->width, &data->height);
 	check_xmp(data->floor);
-	data->wall = mlx_xpm_file_to_image(data->mlx, "./textures/castle.xpm",
+	data->wall = mlx_xpm_file_to_image(data->mlx, "./textures/wall3.xpm",
 			&data->width, &data->height);
 	check_xmp(data->wall);
 	data->player = mlx_xpm_file_to_image(data->mlx, "./textures/king.xpm",
