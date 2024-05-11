@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:53:53 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/11 11:55:22 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/11 12:03:14 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	ft_put_textures(t_data *data)
 {
 	int	i;
 	int	j;
-	char moves[200];
 
 	ft_init_textures(data);
 	i = 0;
@@ -67,8 +66,8 @@ void	ft_put_textures(t_data *data)
 		}
 		i++;
 	}
-	sprintf(moves, "Moves: %d", data->moves);
-	mlx_string_put(data->mlx, data->win, 9 , 15, 0xffffff, moves);
+	sprintf(data->movement, "Moves: %d", data->moves);
+	mlx_string_put(data->mlx, data->win, 9 , 15, 0xffffff, data->movement);
 }
 
 void	ft_init_textures(t_data *data)
@@ -109,9 +108,7 @@ void	ft_start_game(t_data *data)
 			data->map_dim[0] * 45, "so_long");
 	ft_put_textures(data);
 	data->moves = 0;
-	printf("Moves: %d", data->moves);
 	mlx_hook(data->win, 02, 0, ft_keys, data);
 	mlx_hook(data->win, 17, 0, ft_exit, data);
 	mlx_loop(data->mlx);
-	
 }
