@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/09 16:25:32 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/13 14:41:47 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_data
 	int		py;
 	int		ex;
 	int		ey;
-	char	moves;
+	size_t	moves;
 }			t_data;
 
 void		ft_put_textures(t_data *data);
