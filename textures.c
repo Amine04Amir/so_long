@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:53:53 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/11 10:57:42 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/15 15:58:36 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,24 +72,24 @@ void	ft_init_textures(t_data *data)
 {
 	data->floor = mlx_xpm_file_to_image(data->mlx, "./textures/wood.xpm",
 			&data->width, &data->height);
-	check_xmp(data->floor);
+	check_xpm(data->floor);
 	data->wall = mlx_xpm_file_to_image(data->mlx, "./textures/wall3.xpm",
 			&data->width, &data->height);
-	check_xmp(data->wall);
+	check_xpm(data->wall);
 	data->player = mlx_xpm_file_to_image(data->mlx, "./textures/king.xpm",
 			&data->width, &data->height);
-	check_xmp(data->player);
+	check_xpm(data->player);
 	data->colectible = mlx_xpm_file_to_image(data->mlx,
 			"./textures/bomb.xpm",
 			&data->width,
 			&data->height);
-	check_xmp(data->colectible);
+	check_xpm(data->colectible);
 	data->exit = mlx_xpm_file_to_image(data->mlx, "./textures/door2.xpm",
 			&data->width, &data->height);
-	check_xmp(data->exit);
+	check_xpm(data->exit);
 	data->open = mlx_xpm_file_to_image(data->mlx, "./textures/exit2.xpm",
 			&data->width, &data->height);
-	check_xmp(data->open);
+	check_xpm(data->open);
 }
 
 int	ft_exit(t_data *data)

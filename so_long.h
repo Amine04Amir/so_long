@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:17:25 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/13 14:41:47 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/15 15:57:52 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include "./ft_printf/ft_printf.h"
 # include "./get_next_line/get_next_line.h"
 # include "mlx.h"
-# include <math.h>
-# include <stdio.h>
 
 typedef struct s_data
 {
@@ -49,7 +47,7 @@ void		ft_init_textures(t_data *data);
 void		ft_start_game(t_data *data);
 int			ft_exit(t_data *data);
 void		ft_put_exit(t_data *data);
-void		check_xmp(void *img);
+void		check_xpm(void *img);
 
 void		map_loop(t_data *data, char *path);
 void		check_rectangular(char *path);

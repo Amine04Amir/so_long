@@ -6,13 +6,13 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:51:23 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/10 11:45:45 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/15 15:59:30 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	check_xmp(void *img)
+void	check_xpm(void *img)
 {
 	if (!img)
 		ft_error("Invalid XPM\n");
