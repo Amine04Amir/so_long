@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:12:49 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/08 16:34:10 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/16 14:48:57 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,6 @@ void	ft_player_position(t_data *data)
 	}
 }
 
-int	ft_keys(int keycode, t_data *data)
-{
-	ft_right_left(keycode, data);
-	ft_up_down(keycode, data);
-	if (keycode == 53)
-		ft_exit(data);
-	return (0);
-}
-
 int	ft_right_left(int keycode, t_data *data)
 {
 	if (keycode == 2 || keycode == 124)
@@ -105,5 +96,14 @@ int	ft_up_down(int keycode, t_data *data)
 		mlx_clear_window(data->mlx, data->win);
 		ft_put_textures(data);
 	}
+	return (0);
+}
+
+int	ft_keys(int keycode, t_data *data)
+{
+	ft_right_left(keycode, data);
+	ft_up_down(keycode, data);
+	if (keycode == 53)
+		ft_exit(data);
 	return (0);
 }
