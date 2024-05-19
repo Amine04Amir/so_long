@@ -42,9 +42,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 10969.695257572726,
-			"y": 11145.397005204806,
-			"lastActivityTimestamp": 1715866430009,
+			"x": 6559.983397911135,
+			"y": 8052.706747637481,
+			"lastActivityTimestamp": 1716128395983,
 			"meta": {}
 		},
 		{
@@ -58,7 +58,7 @@
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:geo": "rectangle",
+				"tldraw:geo": "x-box",
 				"tldraw:size": "xl",
 				"tldraw:color": "black",
 				"tldraw:dash": "solid",
@@ -72,7 +72,7 @@
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "default",
+				"type": "move",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -82,7 +82,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1173.333251953125,
+				"w": 958.3333129882812,
 				"h": 1060
 			},
 			"insets": [
@@ -101,7 +101,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2.4000000953674316,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": false,
+			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -112,10 +112,10 @@
 			"typeName": "instance"
 		},
 		{
-			"editingShapeId": "shape:Ybj8rVQWIGyLriWNDjxB3",
+			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:Ybj8rVQWIGyLriWNDjxB3"
+				"shape:H1lneobP-fRleLgwfYCYn"
 			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
@@ -127,9 +127,9 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -4647.027179525049,
-			"y": -4916.140130560585,
-			"z": 0.1306805908203125,
+			"x": -3853.798705528323,
+			"y": -4550.655966387481,
+			"z": 0.1,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -50914,7 +50914,7 @@
 			"type": "geo",
 			"props": {
 				"w": 4549.511413574219,
-				"h": 3452.2784423828125,
+				"h": 3436.295166015625,
 				"geo": "rectangle",
 				"color": "black",
 				"labelColor": "black",
@@ -51088,8 +51088,8 @@
 			"props": {
 				"color": "black",
 				"size": "xl",
-				"w": 499.91925048828125,
-				"text": "game and movements",
+				"w": 1443.2101396485718,
+				"text": "textures, game and movements",
 				"font": "draw",
 				"textAlign": "start",
 				"autoSize": true,
@@ -51097,6 +51097,185 @@
 			},
 			"parentId": "page:page",
 			"index": "b93",
+			"typeName": "shape"
+		},
+		{
+			"x": 4621.269820640626,
+			"y": 6726.109991656036,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:H1lneobP-fRleLgwfYCYn",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "xl",
+				"w": 1444.2964875094767,
+				"text": "1- When we called the mlx_hook fct int ft_start game, we gave it the keyboard events to handle and called ft_keys fct for that\n\n2- send the keycodes to the movements fcts, each coresponding keycode moves in a direction.\n\n* ft_right_left(keycode, data);\n* ft_up_down(keycode, data)\n* When the ESC (keycode == 53) key is pressed exit game.",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": false,
+				"scale": 3.1785596843143704
+			},
+			"parentId": "page:page",
+			"index": "b94",
+			"typeName": "shape"
+		},
+		{
+			"x": 9259.723082969727,
+			"y": 6062.317801104278,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:82OsNR60yDehc07r8Rt9c",
+			"type": "geo",
+			"props": {
+				"w": 4174.7393798828125,
+				"h": 3318.9451599121094,
+				"geo": "rectangle",
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"dash": "solid",
+				"size": "xl",
+				"font": "draw",
+				"text": "",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"growY": 0,
+				"url": ""
+			},
+			"parentId": "page:page",
+			"index": "b95",
+			"typeName": "shape"
+		},
+		{
+			"x": 9318.861754844727,
+			"y": 6126.0082918269345,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:91HAt8425OM7BgYWvOmfQ",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "xl",
+				"w": 3870.6039404124263,
+				"text": "ft_right_left || fT_up_down",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 6.035625102762249
+			},
+			"parentId": "page:page",
+			"index": "b96",
+			"typeName": "shape"
+		},
+		{
+			"x": 9366.094726036134,
+			"y": 6757.486105547638,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:JvpeQoqcKZZ8HuQVneV1b",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "xl",
+				"w": 1410.190601281356,
+				"text": "when a certain moevement key is pressed the coresponding functions handle each direction seperately, but in the same way.\n\n*changes the postion of the player in the map, than clears the window, and loads the new textures updated.\n\nright = keycode : 2 & 124\nleft = keycode : 0 & 123\nup = keycode : 13 & 126\ndown = keycode : 1 & 125",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": false,
+				"scale": 2.8053271950016443
+			},
+			"parentId": "page:page",
+			"index": "b97",
+			"typeName": "shape"
+		},
+		{
+			"x": 4546.962768028321,
+			"y": 9369.442587481231,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:xBEFlfALbpW1MLn4QNgrK",
+			"type": "geo",
+			"props": {
+				"w": 4714.5831298828125,
+				"h": 3454.1015625,
+				"geo": "rectangle",
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"dash": "solid",
+				"size": "xl",
+				"font": "draw",
+				"text": "",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"growY": 0,
+				"url": ""
+			},
+			"parentId": "page:page",
+			"index": "b98",
+			"typeName": "shape"
+		},
+		{
+			"x": 9272.353393028321,
+			"y": 9380.086508379669,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:VonWgIesO4abyQbGjiniU",
+			"type": "geo",
+			"props": {
+				"w": 4171.0614013671875,
+				"h": 3431.73828125,
+				"geo": "rectangle",
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"dash": "solid",
+				"size": "xl",
+				"font": "draw",
+				"text": "",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"growY": 0,
+				"url": ""
+			},
+			"parentId": "page:page",
+			"index": "b99",
+			"typeName": "shape"
+		},
+		{
+			"x": 5139.629882286135,
+			"y": 6193.484640703888,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:3zl12w_VexuOWkfifR-cg",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "xl",
+				"w": 883.0703125,
+				"text": "int ft_keys(int keycode, t_data *data)",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 3.873507378329497
+			},
+			"parentId": "page:page",
+			"index": "b9A",
 			"typeName": "shape"
 		}
 	]
