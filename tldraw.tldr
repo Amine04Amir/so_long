@@ -42,9 +42,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 6559.983397911135,
-			"y": 8052.706747637481,
-			"lastActivityTimestamp": 1716128395983,
+			"x": 3499.631987999024,
+			"y": 9856.417685137481,
+			"lastActivityTimestamp": 1716140013519,
 			"meta": {}
 		},
 		{
@@ -72,7 +72,7 @@
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "move",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -82,8 +82,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 958.3333129882812,
-				"h": 1060
+				"w": 389.1666564941406,
+				"h": 970
 			},
 			"insets": [
 				false,
@@ -112,12 +112,12 @@
 			"typeName": "instance"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:dAFgvrhQ-EsA7FkKEqyxC",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:H1lneobP-fRleLgwfYCYn"
+				"shape:dAFgvrhQ-EsA7FkKEqyxC"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:dAFgvrhQ-EsA7FkKEqyxC",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -127,8 +127,8 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -3853.798705528323,
-			"y": -4550.655966387481,
+			"x": -3499.631987999024,
+			"y": -9856.417685137481,
 			"z": 0.1,
 			"meta": {},
 			"id": "camera:page:page",
@@ -51276,6 +51276,52 @@
 			},
 			"parentId": "page:page",
 			"index": "b9A",
+			"typeName": "shape"
+		},
+		{
+			"x": 4697.865737388673,
+			"y": 9480.890951739044,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:uVZR8bfju65tILepzx49M",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "xl",
+				"w": 2829.0157630521494,
+				"text": "Movements: right-left, up-down",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 3.9005286441849094
+			},
+			"parentId": "page:page",
+			"index": "b9B",
+			"typeName": "shape"
+		},
+		{
+			"x": 4618.080581138673,
+			"y": 9753.743124590606,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:dAFgvrhQ-EsA7FkKEqyxC",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "xl",
+				"w": 1574.2924634582332,
+				"text": "ht owl* The functions checks if the direction the player is going is the door (px + 1, px - 1 || py + 1 , py - 1), and if all colectibles are colected, if that's true  exit(0) { Win }.\n\n* else check if the direction the player is going if it is a 'C' or '0', then put a '0' in the players position and update the player position with the move.\n\ndata->map[px] [py] = '0';\npx + 1 || px - 1 || py + 1 || py - 1 = 'P';\n\n* call the ft_player_position to update the map with current player's postion.\n\n* the moves counter increments if any of the conditions is true and prints the number after its done the move.",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": false,
+				"scale": 2.853539759254493
+			},
+			"parentId": "page:page",
+			"index": "b9C",
 			"typeName": "shape"
 		}
 	]
