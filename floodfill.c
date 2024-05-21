@@ -6,7 +6,7 @@
 /*   By: mamir <mamir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 11:34:32 by mamir             #+#    #+#             */
-/*   Updated: 2024/05/08 17:14:41 by mamir            ###   ########.fr       */
+/*   Updated: 2024/05/21 10:10:10 by mamir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_duplicate(t_data *data, char *path)
 		ft_error("Copied map!\n");
 	ft_copie(data, path, copie);
 	ft_player_position(data);
-	flood_fill(data, copie, data->px, data->py);
+	flood_fill(data, copie, data->py, data->px);
 	i = 0;
 	while (i < data->map_dim[0])
 	{
