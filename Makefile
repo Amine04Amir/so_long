@@ -6,7 +6,7 @@ SRC = so_long.c textures.c map.c utils.c game.c movement.c floodfill.c \
 PRINTF = ./ft_printf/libftprintf.a
 
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 
 all : ${NAME} 
 
@@ -14,12 +14,12 @@ all : ${NAME}
 	$(CC) $(CFLAGS) -c  $< -o $@ 
 
 $(PRINTF) : 
-	MAKE -C ./ft_printf
+	make -C ./ft_printf
 
 OBJ = ${SRC:.c=.o}
 
 $(NAME): $(OBJ) $(PRINTF)
-	$(CC) $(PRINTF) $(OBJ)  -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(PRINTF) $(OBJ) -L/usr/local/lib -lmlx -lXext -lX11 -lm -o $(NAME)
 
 clean :
 		rm -f ${OBJ} $(OBJ_BONUS)

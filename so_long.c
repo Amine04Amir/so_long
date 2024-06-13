@@ -15,7 +15,7 @@
 void	ft_error(char *str)
 {
 	write(2, "Error\n", 7);
-	ft_printf("%s", str);
+	printf("%s", str);
 	exit(1);
 }
 

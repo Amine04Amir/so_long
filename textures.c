@@ -106,7 +106,7 @@ void	ft_start_game(t_data *data)
 			data->map_dim[0] * 45, "so_long");
 	ft_put_textures(data);
 	data->moves = 0;
-	ft_printf("moves: %d\n", data->moves);
+	printf("moves: %d\n", data->moves);
 	mlx_hook(data->win, 02, 0, ft_keys, data);
 	mlx_hook(data->win, 17, 0, ft_exit, data);
 	mlx_loop(data->mlx);
